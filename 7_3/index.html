@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+        <title>Javascript Functions</title>
+</head>
+
+<body style="text-align:center">
+
+		<h1>Lets create a counter using closure</h1>
+		<button onclick="onButtonClick();">Call function</button>
+		<h1 id="clickcount"> You clicked 0 time(s) ..! </h1>
+	
+	<script>
+		
+		
+			function counter(){			
+				var count = 0;				
+				return function(){
+					return ++count;
+				};		
+			};			
+			var incrementCounter = counter();
+			
+			function onButtonClick(){			
+				var count = incrementCounter();				
+				document.getElementById('clickcount').innerHTML = "call function " + count + " time(s) ..!";
+			}
+			
+
+
+	</script>
+	
+	
+
+	
+</body>
+
+</html>
